@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: VP
+    database: PC_DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: EMPLOYEES_SAL_RANGE
+      - name: EMPLOYEES_SAMPLE
