@@ -2,9 +2,8 @@
     materialized="table"
 )}}
 
-with employee_sal as 
-(
-select emp_name, sum(salary) as total_sal from PC_DBT_DB.PUBLIC.EMPLOYEES_SAMPLE group by 1
+with dbt_emp_sal as (
+select * from {{ ref ('stg_employee') }}
 )
 
-select * from employee_sal where total_sal>=100000
+select * from dbt_emp_sal where total_sal>=100000
